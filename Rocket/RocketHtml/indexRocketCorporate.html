@@ -7,13 +7,11 @@
 	<meta name="description" content="" />
 	<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 	<!-- mobile settings -->
 	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
-	<!-- WEB FONTS : use %7C instead of | (pipe) -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-	 rel="stylesheet" type="text/css" />
 
 	<!-- CORE CSS -->
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -30,28 +28,6 @@
 	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 </head>
-
-<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/rocket/boxed_background/1.jpg"
-	-->
 
 <body class="smoothscroll enable-animation">
 
@@ -102,32 +78,6 @@
 	<!-- wrapper -->
 	<div id="wrapper">
 
-		<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"-->
-
 		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
 
@@ -144,22 +94,8 @@
 					<a class="logo float-left scrollTo" href="#top">
 						<img src="img/R2.png" alt="" />
 					</a>
-
-					<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
 					<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 						<nav class="nav-main">
-
-							<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
 							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 								<li class="active">
 									<!-- HOME -->
@@ -169,7 +105,7 @@
 								</li>
 								<li>
 									<!-- SERVICES -->
-									<a href="#indexRocket.htmlservices">
+									<a href="indexRocket.html#services">
 										SERVICES
 									</a>
 								</li>
@@ -210,34 +146,7 @@
 
 		<!-- REVOLUTION SLIDER -->
 		<div class="slider fullwidthbanner-container roundedcorners">
-			<!--
-					Navigation Styles:
-					
-						data-navigationStyle="" theme default navigation
-						
-						data-navigationStyle="preview1"
-						data-navigationStyle="preview2"
-						data-navigationStyle="preview3"
-						data-navigationStyle="preview4"
-						
-					Bottom Shadows
-						data-shadow="1"
-						data-shadow="2"
-						data-shadow="3"
-						
-					Slider Height (do not use on fullscreen mode)
-						data-height="300"
-						data-height="350"
-						data-height="400"
-						data-height="450"
-						data-height="500"
-						data-height="550"
-						data-height="600"
-						data-height="650"
-						data-height="700"
-						data-height="750"
-						data-height="800"
-				-->
+		
 			<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 				<ul class="hide">
 
@@ -245,7 +154,7 @@
 					<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600" data-saveperformance="off"
 					 data-title="Rocket Residential">
 						<!-- MAIN IMAGE -->
-						<img src="demo_files/images/AdobeStock_130711085.jpeg" alt="cover image" data-bgposition="center top" data-bgfit="cover"
+						<img src="img/AdobeStock_33298664.jpeg" alt="cover image" data-bgposition="center top" data-bgfit="cover"
 						 data-bgrepeat="no-repeat">
 
 						<div class="tp-caption white_big skewfromleft tp-resizeme" data-x="30" data-y="100" data-speed="400" data-start="1500"
@@ -389,12 +298,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded lightbox" href="demo_files/images/resProj/10INFINITY Model 3648 TY2rev004.pdf"
-										 data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -446,10 +349,6 @@
 									<li>Mirror on rear panel</li>
 								</ul>
 
-								<!--<ul class="list-inline categories m-0">
-									<li><a href="#">Awards category: New Construction</a></li>
-											<li><a href="#">Residential</a></li>
-								</ul>-->
 							</div>
 
 						</div>
@@ -470,11 +369,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded lightbox" href="ajax/services-detail-modal-6.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -484,8 +378,6 @@
 							<div class="item-box-desc">
 								<h3>Solarium Hotel</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Modernization</a></li>
-											<li><a href="#">Residential</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -548,11 +440,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded lightbox" href="ajax/services-detail-modal-6.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -562,8 +449,6 @@
 							<div class="item-box-desc">
 								<h3>The Building Park</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: New Construction</a></li>
-											<li><a href="#">Residential</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -626,11 +511,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded lightbox" href="ajax/services-detail-modal-6.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -640,8 +520,6 @@
 							<div class="item-box-desc">
 								<h3>Solaris Hotel</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Moving Walks</a></li>
-											<li><a href="#">Residential</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -704,11 +582,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -718,8 +591,6 @@
 							<div class="item-box-desc">
 								<h3>Empire Plaza</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Private-Residence Elevators</a></li>
-											<li><a href="#">Residential</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -782,11 +653,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -796,8 +662,6 @@
 							<div class="item-box-desc">
 								<h3>The Big State</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Inclined Elevators</a></li>
-											<li><a href="#">Residential</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -860,11 +724,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded lightbox" href="ajax/services-detail-modal-4.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -874,8 +733,6 @@
 							<div class="item-box-desc">
 								<h3>World Square</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Platform Lifts</a></li>
-											<li><a href="#">Corporate</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -938,11 +795,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -952,8 +804,6 @@
 							<div class="item-box-desc">
 								<h3>The First Tower</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Platform Lifts</a></li>
-											<li><a href="#">Corporate</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -1016,11 +866,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -1030,8 +875,6 @@
 							<div class="item-box-desc">
 								<h3>The Palace Hotel</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Designe</a></li>
-											<li><a href="#">Corporate</a></li>-->
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -1094,11 +937,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -1108,8 +946,7 @@
 							<div class="item-box-desc">
 								<h3>Complex Tower</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Stairway Chairlifts</a></li>
-											<li><a href="#">Corporate</a></li>-->
+
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -1172,11 +1009,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -1186,8 +1018,7 @@
 							<div class="item-box-desc">
 								<h3>Grec Tower</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Modernization</a></li>
-											<li><a href="#">Corporate</a></li>-->
+					
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -1250,11 +1081,6 @@
 											<span class="fa fa-plus fs-20"></span>
 										</a>
 
-										<!-- details -->
-										<!--<a class="ico-rounded" href="services-single-slider.html">
-											<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-										</a>-->
-
 									</span>
 								</span>
 
@@ -1264,8 +1090,7 @@
 							<div class="item-box-desc">
 								<h3>The Trianon</h3>
 								<ul class="list-inline categories m-0">
-									<!--<li><a href="#">Awards category: Futuristic Elevators</a></li>
-											<li><a href="#">Corporate</a></li>-->
+						
 								</ul>
 								<h2>Details: Benefits</h2>
 								<ul style="list-style-type:none;">
@@ -1333,31 +1158,6 @@
 
 						<h3>Ask Us or just say <strong><em>Hello!</em></strong></h3>
 
-
-						<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
 						<!-- Alert Success -->
 						<div id="alert_success" class="alert alert-success mb-30">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -1397,27 +1197,6 @@
 										<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
 									</div>
 								</div>
-
-
-
-								<!--<div class="row">
-											<div class="col-md-8">
-												<label for="contact:subject">Subject *</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
-											</div>
-											<div class="col-md-4">
-												<label for="contact_department">Department</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value="">--- Select ---</option>
-													<option value="Marketing">Marketing</option>
-													<option value="Services">Services</option>
-													<option value="Quote">Quote</option>
-												</select>
-											</div>
-									</div>-->
-
-
-
 
 								<div class="row">
 									<div class="col-md-5">
@@ -1511,9 +1290,6 @@
 			</div>
 		</section>
 		<!-- /CONTACT -->
-
-
-
 
 		<!-- FOOTER -->
 		<footer id="footer">

@@ -7,7 +7,7 @@ $('document').ready(function () {
 
 $('#select-building-type').change(function () {
 	var buildingType = this.value;
-	if (buildingType === "residential") {         //   {  }
+	if (buildingType === "residential") {
 		$('#residential').show();
 		$('#commercial').hide();
 		$('#corporate').hide();
@@ -33,201 +33,111 @@ $('#select-building-type').change(function () {
 function calculShaft() {
 	var department = $('#select-building-type').val();
 	var valor;
-
+	var NberElevators;
 	if (department == "residential") {
-		var apart = parseInt(document.getElementById('apart').value);
-		var floors = parseInt(document.getElementById('floorsRes').value);
-		var base = parseInt(document.getElementById('baseRes').value);
 
-		if (apart > 0 && floors <= 20 || apart > 0 && floors > 20) {
-			valor = (apart / (floors - base)) / 6;
-			valor = Math.ceil(valor);
-			var nbElevators = document.getElementById('numElevReq').value;
+		var apart = document.getElementById("apart").value || 0;
+		var floors = document.getElementById("floorsRes").value || 0;
+		var base = document.getElementById("baseRes").value || 0;
+		var Nber = Math.ceil(apart / (floors * 6));
 
-			if (document.getElementById("gammaS").checked) {
-				document.getElementById('priceElev').value = (7565);
-				var costInst = 7565 * (parseInt(nbElevators));
-				document.getElementById('costInst').value = (7565 * parseInt(nbElevators)) * 0.1;
-				document.getElementById('costTotal').value = (7565 * parseInt(nbElevators)) * 1.1;
-			}
+		var colonne = Math.ceil(floors / 20);
 
-			if (document.getElementById("gammaP").checked) {
-				document.getElementById('priceElev').value = (12345);
-				var costInst = 7565 * (parseInt(nbElevators));
-				document.getElementById('costInst').value = (12345 * parseInt(nbElevators)) * 0.13;
-				document.getElementById('costTotal').value = (12345 * parseInt(nbElevators)) * 1.13;
-			}
-
-			if (document.getElementById("gammaE").checked) {
-				document.getElementById('priceElev').value = (15400);
-				document.getElementById('costInst').value = (15400 * parseInt(nbElevators)) * 0.16;
-				document.getElementById('costTotal').value = (15400 * parseInt(nbElevators)) * 1.16;
-			}
+		NberElevators = Nber * colonne;
+		if (apart != 0 && floors != 0 && base != 0) { document.getElementById("numElevReq").value = NberElevators; }
+		else {
+			document.getElementById("numElevReq").value = 0;
 		}
 	}
-	$('#numElevReq').val(valor);
+
 
 	if (department == "commercial") {
-		var bascageCome = parseInt(document.getElementById('cageCom').value);
-		var valor = parseInt(bascageCome);
-		if (valor > 0) {
+		var a1 = document.getElementById("parkCom").value || 0;
+		var a2 = document.getElementById("baseCom").value || 0;
+		var a3 = document.getElementById("floorsCom").value || 0;
+		var a4 = document.getElementById("companiesCom").value || 0;
 
-			if (document.getElementById("gammaS").checked) {
-				document.getElementById('priceElev').value = (7565);
-				document.getElementById('costInst').value = (7565 * parseInt(valor)) * 0.1;
-				document.getElementById('costTotal').value = (7565 * parseInt(valor)) * 1.1;
-			}
 
-			if (document.getElementById("gammaP").checked) {
-				document.getElementById('priceElev').value = (12345);
-				document.getElementById('costInst').value = (12345 * parseInt(valor)) * 0.13;
-				document.getElementById('costTotal').value = (12345 * parseInt(valor)) * 1.13;
-			}
-
-			if (document.getElementById("gammaE").checked) {
-				document.getElementById('priceElev').value = (15400);
-				document.getElementById('costInst').value = (15400 * parseInt(valor)) * 0.16;
-				document.getElementById('costTotal').value = (15400 * parseInt(valor)) * 1.16;
-			}
+		NberElevators = document.getElementById("cageCom").value || 0;
+		if (a1 != 0 && a2 != 0 && a3 != 0 && a4 != 0) {
+			document.getElementById("numElevReq").value = NberElevators;
+		}
+		else {
+			document.getElementById("numElevReq").value = 0;
 		}
 	}
-	$('#numElevReq').val(valor);
 
 	if (department == "corporate") {
-		var companies = parseInt(document.getElementById('companiesCorp').value);
-		var floors = parseInt(document.getElementById('floorsCorp').value);
-		var base = parseInt(document.getElementById('baseCorp').value);
-		var parkCorp = parseInt(document.getElementById('parkCorp').value);
-		var occupCorp = parseInt(document.getElementById('occupCorp').value);
+		var floorsCorp1 = document.getElementById("floorsCorp").value || 0;
+		var floorsCorp = Number(document.getElementById("floorsCorp").value || 0);
 
-		if (apart > 0 && floors > 0) {
-			valor = ((floors / 20) / 1000)((floors / occupCorp) / 1000);
-			valor = Math.ceil(valor);
-			var columns = valor * ((floors + base) / 20);
-			valor = math.ceil(columns) * valor;			
-			var nbElevators = document.getElementById('numElevReq').value;
+		var Bc = document.getElementById("baseCorp").value;
+		var Bsm = Number(document.getElementById("baseCorp").value || 0);
+		var mpf = document.getElementById("occupCorp").value || 0;
+		var Nber = Math.ceil(mpf * (floorsCorp + Bsm) / 1000);
+		var colonne = Math.ceil((floorsCorp + Bsm) / 20);
+		var NberResultElevatorsByCol = Math.ceil(Nber / colonne);
 
-			if (document.getElementById("gammaS").checked) {
-				valor = ((floors / 20) / 1000)((floors / occupCorp) / 1000);
-				valor = Math.ceil(valor);
-				var columns = valor * ((floors + base) / 20);
-				valor = math.ceil(columns) * valor;
-				document.getElementById('priceElev').value = (7565);
-				var costInst = 7565 * (parseInt(nbElevators));
-				document.getElementById('costInst').value = (7565 * parseInt(valor)) * 0.1;
-				document.getElementById('costTotal').value = (7565 * parseInt(valor)) * 1.1;
-			}
+		NberElevators = NberResultElevatorsByCol * colonne;
 
-			if (document.getElementById("gammaP").checked) {
-				valor = ((floors / 20) / 1000)((floors / occupCorp) / 1000);
-				valor = Math.ceil(valor);
-				var columns = valor * ((floors + base) / 20);
-				valor = math.ceil(columns) * valor;
-				document.getElementById('priceElev').value = (12345);
-				var costInst = 7565 * (parseInt(nbElevators));
-				document.getElementById('costInst').value = (12345 * parseInt(valor)) * 0.13;
-				document.getElementById('costTotal').value = (12345 * parseInt(valor)) * 1.13;
-			}
-
-			if (document.getElementById("gammaE").checked) {
-				valor = ((floors / 20) / 1000)((floors / occupCorp) / 1000);
-				valor = Math.ceil(valor);
-				var columns = valor * ((floors + base) / 20);
-				valor = math.ceil(columns) * valor;
-				document.getElementById('priceElev').value = (15400);
-				document.getElementById('costInst').value = (15400 * parseInt(valor)) * 0.16;
-				document.getElementById('costTotal').value = (15400 * parseInt(valor)) * 1.16;
-			}
-		}
+		document.getElementById("numElevReq").value = NberElevators;
 	}
-	$('#numElevReq').val(valor);
 
-	if (department == "hybryd") {
-		var companiesHybr = parseInt(document.getElementById('companiesHybr').value);
-		var floorsHybr = parseInt(document.getElementById('floorsHybr').value);
-		var baseHybr = parseInt(document.getElementById('baseHybr').value);
-		var parkHybr = parseInt(document.getElementById('parkHybr').value);
-		var occupHybr = parseInt(document.getElementById('occupHybr').value);
-		var hoursAct = parseInt(document.getElementById('hoursAct').value);
+	if (department == "hybrid") {
 
-		if (apart > 0 && floors > 0) {
-			valor = ((floors / 20) / 1000)((floors / occupCorp) / 1000);
-			valor = Math.ceil(valor);
-			var columns = valor * ((floors + base) / 20);
-			valor = math.ceil(columns) * valor;
-			document.getElementById('totalCorporate').value = (15400 * parseInt(valor)) * 1.16;
-		}
+		var floorsCorp1 = document.getElementById("floorsHybr").value || 0;
+		var floorsCorp = Number(document.getElementById("floorsHybr").value || 0);
+		var Bc = document.getElementById("baseHybr").value;
+		var Bsm = Number(document.getElementById("baseHybr").value || 0);
+		var mpf = document.getElementById("occupHybr").value || 0;
+		var Nber = Math.ceil(mpf * (floorsCorp + Bsm) / 1000);
+		var colonne = Math.ceil((floorsCorp + Bsm) / 20);
+		var NberResultElevatorsByCol = Math.ceil(Nber / colonne);
+
+		NberElevators = NberResultElevatorsByCol * colonne;
+
+		document.getElementById("numElevReq").value = NberElevators;
+
 	}
-	$('#numElevReq').val(valor);
+
+	var PriceInst;
+	var InstalCost;
+
+	if (document.getElementById("gammaS").checked) {
+
+
+		// STANDARD //              
+		document.getElementById("priceElev").value = "7565.00";
+		PriceInst = 7565 * 1.1 * NberElevators;
+		PriceInst = PriceInst.toFixed(2);
+		var instCost = 7565 * 0.1 * NberElevators;
+		document.getElementById("costTotal").value = PriceInst;
+		document.getElementById("costInst").value = instCost;
+	}
+
+	//  PREMIUM  //
+
+	if (document.getElementById("gammaP").checked) {
+		document.getElementById("priceElev").value = "12345.00";
+		PriceInst = (NberElevators * 12345) * 1.13
+		PriceInst = PriceInst.toFixed(2);
+		var instCost = 12345 * 0.1 * NberElevators;
+
+		document.getElementById("costTotal").value = PriceInst;
+		document.getElementById("costInst").value = instCost;
+	}
+
+	// EXCELIUM //
+
+	if (document.getElementById("gammaE").checked) {
+
+		document.getElementById("priceElev").value = "15400.00";
+		PriceInst = (NberElevators * 15400) * 1.16;
+		PriceInst = PriceInst.toFixed(2);
+		var instCost = 15400 * 0.1 * NberElevators;
+
+		document.getElementById("costTotal").value = PriceInst;
+		document.getElementById("costInst").value = instCost;
+	}
 }
 
-function getGammaValue(unitPrice) {
-	var valor;
-	var department = $('#select-building-type').val();
-
-	var companies = parseInt(document.getElementById('companiesCom').value);
-	var floorsCom = parseInt(document.getElementById('floorsCom').value);
-	var baseCom = parseInt(document.getElementById('baseCom').value);
-	var parkCom = parseInt(document.getElementById('parkCom').value);
-	var cageCom = parseInt(document.getElementById('cageCom').value);
-
-	var companiesCorp = parseInt(document.getElementById('companiesCorp').value);
-	var floorsCorp = parseInt(document.getElementById('floorsCorp').value);
-	var baseCorp = parseInt(document.getElementById('baseCorp').value);
-	var parkCorp = parseInt(document.getElementById('parkCorp').value);
-	var occupCorp = parseInt(document.getElementById('occupCorp').value);
-
-	var companiesHybr = parseInt(document.getElementById('companiesHybr').value);
-	var floorsHibr = parseInt(document.getElementById('floorsHibr').value);
-	var baseHibr = parseInt(document.getElementById('baseHibr').value);
-	var parkHibr = parseInt(document.getElementById('parkHibr').value);
-	var occupHibr = parseInt(document.getElementById('occupHibr').value);
-	var hoursAct = parseInt(document.getElementById('hoursAct').value);
-}
-$('#calculateQuote').click(function () {
-
-});
-
-
-	/*
-		if (document.getElementById("gammaS").checked) {
-			alert(333333);
-			var nbElevators = document.getElementById('numElevReq').value;
-			document.getElementById('totalStandart').value = (7565 * parseInt(nbElevators)) * 1.1;
-		}
-	
-		if (document.getElementById("gammaP").checked) {
-			alert(44444);
-			valor = numCage;
-			document.getElementById('totalPremium').value = (12345 * parseInt(valor)) * 1.13;
-		}
-	
-		if (document.getElementById("gammaE").checked) {
-			alert(55);
-			valor = ((floors / 20) / 1000)((floors / people) / 1000);
-			valor = Math.ceil(valor);
-			var columns = valor * ((floors + base) / 20);
-			valor = math.ceil(columns) * valor;
-			document.getElementById('totalCorporate').value = (15400 * parseInt(valor)) * 1.16;
-			document.getElementById('totalHybrid').value = (15400 * parseInt(valor)) * 1.16;
-		}*/
-
-
-/*
-if (optionGamaS == true) {
-var nbElevators = document.getElementById('numElevReq').value;
-document.getElementById('totalStandart').value = (7565 * parseInt(nbElevators)) * 1.1;
-}
-if (optionGamaP == true) {
-valor = numCage;
-document.getElementById('totalPremium').value = (12345 * parseInt(valor)) * 1.13;
-}
-if (optionGamaE == true) {
-valor = ((floors / 20) / 1000)((floors / people) / 1000);
-valor = Math.ceil(valor);
-var columns = valor * ((floors + base) / 20);
-valor = math.ceil(columns) * valor;
-document.getElementById('totalCorporate').value = (15400 * parseInt(valor)) * 1.16;
-document.getElementById('totalHybrid').value = (15400 * parseInt(valor)) * 1.16;
-}
-}*/
